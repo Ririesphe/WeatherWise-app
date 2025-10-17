@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherWise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="site-title">
+        <h1>WeatherWise</h1>
+        <p>Stay informed. Stay WeatherWise.</p>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="logout.html" id="logoutLink">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Search Section -->
+    <section class="search-section">
+      <input type="text" id="cityInput" placeholder="Enter your area">
+      <button id="checkWeatherBtn">Check Weather</button>
+    </section>
+
+    <!-- Weather Info Section -->
+    <section id="weatherInfo" class="weather-info"></section>
+
+    <!-- Emergency Alerts Section -->
+    <section id="alertCards" class="alert-section"></section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <h3>Subscribe for Weather Alerts</h3>
+      <input type="email" id="userEmail" placeholder="Enter your email">
+      <button id="subscribeBtn">Subscribe</button>
+      <p id="subscribeMsg" style="margin-top:10px; font-size:14px;"></p>
+      <p>© 2025 WeatherWise | Developed by Siphelele Malotana.</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

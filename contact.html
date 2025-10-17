@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact WeatherWise</title>
+  <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="site-title">
+        <h1>WeatherWise</h1>
+        <p>Stay informed. Stay WeatherWise.</p>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="logout.html" id="logoutLink">Logout</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+      <p>Have questions, feedback, or need assistance? Reach out to our WeatherWise support team below. We aim to respond as quickly as possible!
+
+</p>
+
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="contactMsg"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <h3>Subscribe for Weather Alerts</h3>
+      <input type="email" id="userEmail" placeholder="Enter your email">
+      <button id="subscribeBtn">Subscribe</button>
+      <p id="subscribeMsg"></p>
+      <p>© 2025 WeatherWise | Developed by Siphelele Malotana.</p>
+    </div>
+  </footer>
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const contactMsg = document.getElementById('contactMsg');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if(name && email && message){
+        contactMsg.style.color = 'lightgreen';
+        contactMsg.textContent = 'Thank you! Your message has been sent.';
+        contactForm.reset();
+      } else {
+        contactMsg.style.color = 'red';
+        contactMsg.textContent = 'Please fill in all fields.';
+      }
+    });
+
+    // Subscription button
+    const subscribeBtn = document.getElementById('subscribeBtn');
+    const subscribeMsg = document.getElementById('subscribeMsg');
+    const userEmail = document.getElementById('userEmail');
+
+    subscribeBtn.addEventListener('click', () => {
+      const email = userEmail.value.trim();
+      if(email) {
+        subscribeMsg.style.color = 'lightgreen';
+        subscribeMsg.textContent = `Success! ${email} has been subscribed to Weather Alerts.`;
+        userEmail.value = '';
+      } else {
+        subscribeMsg.style.color = 'red';
+        subscribeMsg.textContent = 'Please enter a valid email.';
+      }
+    });
+  </script>
+</body>
+</html>

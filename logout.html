@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logged Out - WeatherWise</title>
+  <link rel="stylesheet" href="style3.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, rgba(0,153,204,0.6), rgba(0,191,255,0.6)), 
+                  url("bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      height: 100vh;
+      
+      /* ✅ Flexbox for centering */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: all 0.5s ease;
+    }
+
+    .logout-card {
+      padding: 50px;
+      border: 2px solid white;
+      border-radius: 15px;
+      max-width: 600px;
+      background: rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .logout-card h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .logout-card p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .logout-card a {
+      padding: 12px 25px;
+      background-color: #00ffff;
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      border: 1px solid #fff;
+      transition: 0.3s ease;
+    }
+
+    .logout-card a:hover {
+      background-color: #00bfff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <section class="logout-card" id="logoutCard">
+    <h2>You have been logged out.</h2>
+    <p>Thank you for visiting WeatherWise.</p>
+    <a href="login.html" id="loginAgainBtn">Login Again</a>
+</section>
+
+<script>
+  const loginBtn = document.getElementById('loginAgainBtn');
+  const logoutCard = document.getElementById('logoutCard');
+
+  loginBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // prevent immediate navigation
+
+    // fade out effect
+    logoutCard.style.transition = 'opacity 0.6s';
+    logoutCard.style.opacity = '0';
+
+    // redirect after fade out
+    setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 600);
+  });
+</script>
+
+</body>
+</html>

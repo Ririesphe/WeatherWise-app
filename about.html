@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About WeatherWise</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="site-title">
+        <h1>WeatherWise</h1>
+        <p>Stay informed. Stay WeatherWise.</p>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="logout.html" id="logoutLink">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-section">
+      <h2>About WeatherWise</h2>
+      <p>
+        Welcome to <strong>WeatherWise</strong>, your go-to platform for real-time weather updates, forecasts and emergency alert in the region. 
+        Our mission is to keep you informed about current weather conditions, upcoming forecasts, and important weather alerts so you can plan your day safely and effectively.
+      </p>
+
+      <h3>Our Purpose</h3>
+      <ul>
+        <li>Accurate current weather information for your city or neighborhood.</li>
+        <li>3-day weather forecasts so you can plan your activities ahead.</li>
+        <li>Real-time alerts and notifications for severe weather conditions.</li>
+        <li>A simple and easy-to-use interface, accessible on all devices.</li>
+      </ul>
+
+      <h3>Why Use WeatherWise?</h3>
+      <ul>
+        <li>Dress appropriately for the day’s weather.</li>
+        <li>Stay safe during extreme weather conditions.</li>
+        <li>Plan your outdoor activities with confidence.</li>
+      </ul>
+
+      <p>
+        Our platform is continuously updated to ensure that you receive the most recent and reliable weather information. Stay connected and stay WeatherWise!
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <h3>Subscribe for Weather Alerts</h3>
+      <input type="email" id="userEmail" placeholder="Enter your email">
+      <button id="subscribeBtn">Subscribe</button>
+      <p id="subscribeMsg"></p>
+      <p>© 2025 WeatherWise | Developed by Siphelele Malotana.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Subscription button functionality
+    const subscribeBtn = document.getElementById('subscribeBtn');
+    const subscribeMsg = document.getElementById('subscribeMsg');
+    const userEmail = document.getElementById('userEmail');
+
+    subscribeBtn.addEventListener('click', () => {
+      const email = userEmail.value.trim();
+      if(email) {
+        subscribeMsg.style.color = 'lightgreen';
+        subscribeMsg.textContent = `Success! ${email} has been subscribed to Weather Alerts.`;
+        userEmail.value = '';
+      } else {
+        subscribeMsg.style.color = 'red';
+        subscribeMsg.textContent = 'Please enter a valid email.';
+      }
+    });
+  </script>
+</body>
+</html>
