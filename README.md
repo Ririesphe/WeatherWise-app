@@ -17,7 +17,9 @@
 ## Demo Screenshots 🖼️
 
 <img width="1366" height="607" alt="chrome_L3wglKs5Eg" src="https://github.com/user-attachments/assets/950bd436-8acb-4c32-84f4-8e0d9f9125b5" />
+
  ---
+ 
 <img width="1366" height="607" alt="chrome_yCvHRFPrNG" src="https://github.com/user-attachments/assets/19dbe004-0105-488f-928f-94af83f55e32" />
 
 ---
